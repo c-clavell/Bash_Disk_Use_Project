@@ -41,14 +41,19 @@ def get_size(path,numSubs=0,numfiles=0):
 if __name__ == '__main__':
 
     pwd = subprocess.run("pwd", stdout=subprocess.PIPE, shell=True)
-    pwd =pwd.stdout.decode('utf-8')
-    print(pwd)
-    
+    #print(pwd)
+
+    ##changing path from b'/home/cc/BASH_DISK_USAGE_PROJECT\n'
+    ## to '../BASH_DISK_USAGE_PROJECT'
+    pwd=pwd.stdout.decode('utf-8').replace('\n','').split('/')
+    pwd ="../"+ pwd[-1]
+    path = pwd
+
+    #print(pwd)
+    #print(os.getcwdb())
+    #path = os.getcwdb()
    
 
-    # path = './'
-    #path ='/home'
-    path= '../BASH_DISK_USAGE_PROJECT'
     # path= '../BASH_DISK_USAGE_PROJECT/aa'   ## used for testing
     # print('total arguments passed: ', len(sys.argv)) 
    
