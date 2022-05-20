@@ -15,3 +15,6 @@ Task 5: Use a python package to generate a report in CSV format.
 
 I added more functionality to the function. Beside getting the total size, it will also
 determine the total number of files and directories present inside the directory.
+
+The default path will be the current working directory. You can use the os.getcwdb() method or use the 
+subprocess.run method to run the bash command 'pwd' to get the working dir path.
